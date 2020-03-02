@@ -198,7 +198,7 @@ elseif (strpos($result,'Your card does not support this type of purchase.')) {
 curl_close($ch);
 ob_flush();
 //////=========Comment Echo $result If U Want To Hide Site Side Response
-echo $result 
+///echo $result 
 
 ///////////////////////////////////////////////===========================Edited by Reboot13================================================\\\\\\\\\\\\\\\
 ?>
