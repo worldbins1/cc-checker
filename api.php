@@ -157,6 +157,6 @@ elseif (strpos($result, 'stolen_card')) {
 curl_close($ch);
 ob_flush();
 //////=========Comment Echo $result If U Want To Hide Site Side Response
-echo $result
+///echo $result
 //////////////////===============================================\\\\\\\\\\\\\\\
 ?>
