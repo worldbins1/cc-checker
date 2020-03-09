@@ -1,6 +1,6 @@
 <?php
 
-////////////////////////////===[https://www.onegreenplanet.org/]
+////////////////////////////===[https://www.onegreenplanet.org/]///
 
 error_reporting(0);
 set_time_limit(0);
