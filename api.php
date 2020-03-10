@@ -78,7 +78,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept: application/json', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=3f16a900-0fa4-cb4b-8ef3-ec017d155c40',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=a2ed7b69-9aba-b822-9cd6-1a2224c343db',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
 //'user-agent: #'));
@@ -88,7 +88,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.onegreenplanet.org%2Fvegan-food%2Fraw-desserts-a-great-choice%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$firstname.'+'.$lastname.'&time_on_page=19836&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=4675085d-a5d6-44a3-9399-e622971da67d&sid=58a37b66-4edf-429a-bea3-6e6ce9080adb&key=pk_live_jFIGNwQtOKGxGSPRIo1sxPts');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.onegreenplanet.org%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$firstname.'&time_on_page=10608&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=e4498153-919c-4e18-8e93-7a26940fe6c4&sid=0be2c4b2-541a-4101-8b02-3011ae687682&key=pk_live_jFIGNwQtOKGxGSPRIo1sxPts');
 
 $result = curl_exec($ch);
 // $token = trim(strip_tags(getStr($result,'"id": "','"')));
