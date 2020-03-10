@@ -26,14 +26,14 @@ function GetStr($string, $start, $end)
   $str = explode($end, $str[1]);
   return $str[0];
 }
-function monarchproxys()
+function rebootproxys()
 {
   $poxySocks = file("Socks5.txt");
   $myproxy = rand(0, sizeof($poxySocks) - 1);
   $poxySocks = $poxySocks[$myproxy];
   return $poxySocks;
 }
-$poxySocks4 = monarchproxys();
+$poxySocks4 = rebootproxys();
 
 ////////////////////////////===[Randomizing Details Api]
 
