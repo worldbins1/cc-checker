@@ -16,7 +16,7 @@
           <div class="col-md-12">
             <br>
             
-                <textarea id="lista" style="width: 600px;height: 300px;resize:  none;background-color:white transparent;border: 1px solid black;color:black; "></textarea>
+                <textarea id="lista" style="width: 520px;height: 300px;resize:  none;background-color:white transparent;border: 1px solid black;color:black; "></textarea>
           </div>
           <br>
         </div>
