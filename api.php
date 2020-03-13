@@ -1,6 +1,6 @@
 <?php
 
-////////////////////////////===[https://www.onegreenplanet.org/]///
+////////////////////////////===[ Khudka api banalo bc]///
 
 error_reporting(0);
 set_time_limit(0);
