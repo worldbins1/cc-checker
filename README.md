@@ -1,4 +1,4 @@
-# cc-checker
+# cc-checker #Project_closed
 A Cc Checker by [Reboot13](https://t.me/reboot13)
 This is Stripe 1-req checker
 this checker only authenticate the card,this checker don't charge
