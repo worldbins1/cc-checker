@@ -122,7 +122,7 @@ $result = curl_exec($ch);
   'sec-fetch-mode: ',
   'sec-fetch-dest: ',
   'sec-fetch-site: ',  */
-));
+////));
 ///curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 
 //$result = curl_exec($ch);
