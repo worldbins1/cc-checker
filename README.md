@@ -15,4 +15,9 @@ Don't fork you will not get anything...Better commit changes
 NOTE-git web page hosting is not working properly for api request so Download master zip and use checker as local host or host on any site(eg 000webhost)
 
 
+The Api is not upadted
+you have to find your own site and Fix api
+Api Fixing Video is uploaded here
+[Telegram- CC Checker](https://t.me/cc_checker)
+
 Powered by [Shadow Monarch](https://t.me/CadisEtramaDiRaizel1)
