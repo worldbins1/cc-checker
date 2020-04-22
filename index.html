@@ -1,0 +1,197 @@
+﻿﻿<head>
+  <title>☄ strípє ¢нє¢кєя ☄</title>
+  <link href="reboot13.css" rel="stylesheet" id="bootstrap-css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Reboot13 Web">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <center>
+    <div class="row col-md-12">
+    <div class="card border-dark card text-white bg-light  col-sm-8">
+      <div class="card-body text-primary">
+        <center><span>
+            <h1 class="col-md-10">「🅁🄴🄱🄾🄾🅃」</h1>
+          </span></center>
+        <div class="md-form">
+          <div class="col-md-12">
+            <br>
+            <center>
+          <button class="btn btn-warning" style="width: 200px; outline: none;" id="testar" onclick="enviar()">✔ Start </button>
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="btn btn-danger" style="width: 200px; outline: none;">✘ Stop </button>
+        </center></br>
+
+            
+               <center><textarea id="lista" style="width:450px;height: 250px; resize:both; background-color:white transparent;border: 1px solid black;color:black; border-radius:5px; "></textarea></center>
+          </div>
+          <br>
+        </div>
+
+        <br>
+      </div>
+    </div>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <div class="card border-dark card text-white bg-light  col-sm-3">
+      <div class="card-body text-Dark">
+      
+      <h2 class="text-primary col-md-13">🅢🅣🅐🅣🅢</h2>
+        
+        &nbsp&nbsp
+        <ul class="list-group">
+          <li style="font-weight: bold;" class="list-group-item d-flex justify-content-between align-items-center">
+            Approved<i class="material-icons orange600">input</i>
+            <span id="cLive" class="badge badge-pill badge-success">0</span>
+          </li>
+          <br>
+          <h10>
+            &nbsp&nbsp
+            <ul class="list-group">
+              <li style="font-weight: bold;" class="list-group-item d-flex justify-content-between align-items-center">
+                Declined<i class="material-icons orange600">input</i>
+                <span id="cDie" class="badge badge-pill badge-danger">0</span>
+              </li>
+              <br>
+              <h10>
+                &nbsp&nbsp
+                <ul class="list-group">
+                  <li style="font-weight: bold;" class="list-group-item d-flex justify-content-between align-items-center">
+                    Checked <i class="material-icons orange600">input</i></span>
+                    <span id="total" class="badge badge-pill badge-secondary">0</span>
+                  </li>
+                  <br>
+                  <h10>
+                    &nbsp&nbsp
+                    <ul class="list-group">
+                      <li style="font-weight: bold;" class="list-group-item d-flex justify-content-between align-items-center"></span>
+                        Total Cards<i class="material-icons orange600">input</i>
+                        <br>
+                        <h10>
+                          <span id="carregadas" class="badge badge-pill badge-dark">0</span>
+                      </li>
+                      <br>
+                      <div class="card-body">
+                      </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="col-md-12">
+    <br>
+    
+    <div class="card border-success mb-3 card bg-light">
+      <div class="card-body text-success">
+        <div style="position: absolute;
+        top: 0;
+        right: 0;">
+        </div>
+        <h6 style="font-weight: bold;" class="card-title">Approved <span id="cLive2" class="badge badge-info">0</span></h6>
+        <div id="bode">
+        </div>
+        <span id=".aprovadas" class="aprovadas"></span>
+      </div>
+    </div>
+  </div>
+  </div>
+  <br>
+  <div class="col-md-12">
+    <br>
+    <div class="card border-danger mb-3 card bg-light">
+      <div class="card-body text-danger ">
+        <div style="position: absolute;
+        top: 0;
+        right: 0;">
+        </div>
+        <h6 style="font-weight: bold;" class="card-title">Declined <span id="cDie2" class="badge badge-info">0</span></h6>
+        <div id="bode2">
+        </div>
+        <span id=".reprovadas" class="reprovadas"></span>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </h7>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+
+      $("#bode").hide();
+      $("#esconde").show();
+
+      $('#mostra').click(function() {
+        $("#bode").slideToggle();
+      });
+
+    });
+  </script>
+  <script title="ajax do checker">
+    function enviar() {
+      var linha = $("#lista").val();
+      var linhaenviar = linha.split("\n");
+      var total = linhaenviar.length;
+      var ap = 0;
+      var rp = 0;
+      linhaenviar.forEach(function(value, index) {
+        setTimeout(
+          function() {
+            $.ajax({
+              url: 'api.php?lista=' + value,
+              type: 'GET',
+              async: true,
+              success: function(resultado) {
+                if (resultado.match("#Aprovada")) {
+                  removelinha();
+                  ap++;
+                  aprovadas(resultado + "");
+                } else {
+                  removelinha();
+                  rp++;
+                  reprovadas(resultado + "");
+                }
+                $('#carregadas').html(total);
+                var fila = parseInt(ap) + parseInt(rp);
+                $('#cLive').html(ap);
+                $('#cDie').html(rp);
+                $('#total').html(fila);
+                $('#cLive2').html(ap);
+                $('#cDie2').html(rp);
+              }
+            });
+          }, 2500 * index);
+      });
+    }
+
+    function aprovadas(str) {
+      $(".aprovadas").append(str + "<br>");
+    }
+
+    function reprovadas(str) {
+      $(".reprovadas").append(str + "<br>");
+    }
+
+    function removelinha() {
+      var lines = $("#lista").val().split('\n');
+      lines.splice(0, 1);
+      $("#lista").val(lines.join("\n"));
+    }
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script></center>
+</body>
+<br>
+<footer>
+  <div class="footer-copyright text-center py-3">
+    <br>
+    <h4>Systems Reboot13: <span class="badge badge-success">ONLINE</span></h4>
+  </div>
+  </h7>
+</footer>
+</html>
