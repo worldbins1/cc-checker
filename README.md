@@ -8,10 +8,6 @@ there may be so problem with proxies
 This checker is good for ccn, And old lives cvv
 Do this checker give Cvv live? answer=YES... Use good proxies
 
-
-Create a file proxy.txt and add Proxies if you are not using zones
-
-
 ##Join Our support group [Cc Checker](https://t.me/cc_checker)
 
 Don't fork you will not get anything...Better commit changes
