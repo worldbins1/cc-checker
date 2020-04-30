@@ -59,7 +59,7 @@ $postcode = $matches1[1][0];
 
 $username = 'Put Zone Username Here';
 $password = 'Put Zone Password Here';
-$port = api port;
+$port = 'api port';
 $session = mt_rand();
 $super_proxy = ' #api site url#';
 
