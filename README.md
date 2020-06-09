@@ -28,3 +28,8 @@ Api Fixing Video is uploaded here
 
 
 Powered by [Shadow Monarch]
+
+Follow me
+[Instagram- krutik013](https://instagram.com/krutik013)
+[Twitter- krutik013](https://twitter.com/krutik013)
+[Youtube- Krutik Raut](https://www.youtube.com/channel/UCylCCoTTu_ULMYrqaiYMljA)
