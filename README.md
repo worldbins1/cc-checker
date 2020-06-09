@@ -31,8 +31,8 @@ Powered by [Shadow Monarch]
 
 Follow me
 Instagram
-[Instagram- krutik013](https://instagram.com/krutik013)
+[krutik013](https://instagram.com/krutik013)
 Twitter
-[Twitter- krutik013](https://twitter.com/krutik013)
+[krutik013](https://twitter.com/krutik013)
 Youtube
-[Youtube- Krutik Raut](https://www.youtube.com/channel/UCylCCoTTu_ULMYrqaiYMljA)
+[Krutik Raut](https://www.youtube.com/channel/UCylCCoTTu_ULMYrqaiYMljA)
