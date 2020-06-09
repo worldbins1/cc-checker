@@ -1,5 +1,4 @@
-# cc-checker #Project_Closed
-ADD hq proxies/Use webhost/use rdp/use vpn
+# cc-checker
 
 A Cc Checker by [Reboot13](https://t.me/reboot13)
 This is Stripe checker
@@ -14,10 +13,9 @@ You can get CCN and CVV lives both from this checker doesn't mater 1req/2req
 
 Create a file proxy.txt and add Proxies if you are not using zones
 
-
 ##Join Our support group [Cc Checker](https://t.me/cc_checker)
 
-Don't fork you will not get anything...Better commit changes
+Pull request commit changes
 
 NOTE-git web page hosting is not working properly for api request so Download master zip and use checker as local host(eg xampp) or host on any site(eg 000webhost)
 
@@ -26,5 +24,7 @@ This api is just a Base
 you have to find your own site and Fix api
 Api Fixing Video is uploaded here
 [Telegram- CC Checker](https://t.me/cc_checker)
+[Telegram- Support group](https://t.me/cc_check)
 
-Powered by [Shadow Monarch](https://t.me/CadisEtramaDiRaizel)
+
+Powered by [Shadow Monarch]
