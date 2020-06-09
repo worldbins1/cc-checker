@@ -13,7 +13,8 @@ You can get CCN and CVV lives both from this checker doesn't mater 1req/2req
 
 Create a file proxy.txt and add Proxies if you are not using zones
 
-##Join Our support group [Cc Checker](https://t.me/cc_checker)
+##Join Our support group [Telegram- Support group](https://t.me/cc_check)
+
 
 Pull request commit changes
 
@@ -24,7 +25,6 @@ This api is just a Base
 you have to find your own site and Fix api
 Api Fixing Video is uploaded here
 [Telegram- CC Checker](https://t.me/cc_checker)
-[Telegram- Support group](https://t.me/cc_check)
 
 
 Powered by [Shadow Monarch]
