@@ -29,6 +29,8 @@ Api Fixing Video is uploaded here
 
 Powered by [Shadow Monarch]
 
+[Download Files](https://github.com/reboot13-git/cc-checker/archive/master.zip)
+
 Follow me
 Instagram
 [krutik013](https://instagram.com/krutik013)
