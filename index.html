@@ -131,7 +131,7 @@ $(document).ready(function(){
                         type: 'GET',
                         async: true,
                         success: function(resultado) {
-                            if (resultado.match("#Aprovada")) {
+                            if (resultado.match("#Approved")) {
                                 removelinha();
                                 ap++;
                                 aprovadas(resultado + "");
