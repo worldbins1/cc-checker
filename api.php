@@ -6,7 +6,6 @@ set_time_limit(0);
 error_reporting(0);
 date_default_timezone_set('America/Buenos_Aires');
 
-
 function multiexplode($delimiters, $string)
 {
   $one = str_replace($delimiters, $delimiters[0], $string);
@@ -91,7 +90,7 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_POSTFIELDS, '     ');
 
  $result1 = curl_exec($ch);
- $token1 = trim(strip_tags(getStr($result1,'"id": "','"')));
+ //$token1 = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 
 //////2req 
