@@ -55,18 +55,21 @@ $phone = $matches1[1][0];
 preg_match_all("(\"postcode\":(.*),\")siU", $get, $matches1);
 $postcode = $matches1[1][0];
 
-////////////////////////////===[Luminati Details]
+////////////////////////////===[Zone Details]
 
-$username = 'Put Zone Username Here';
-$password = 'Put Zone Password Here';
-$port = 22225;
+$username = ' Your Zone Username';
+$password = 'zone password';
+///$port = zone port;
 $session = mt_rand();
-$super_proxy = 'zproxy.lum-superproxy.io';
+$super_proxy = 'Zone url';
 
 ////////////////////////////===[For Authorizing Cards]
 
 $ch = curl_init();
-////////=========Socks Proxy
+//////////======= LUMINATI
+///curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
+//curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password"); Uncomment while using Zones
+//////////======= Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
 curl_setopt($ch, CURLOPT_URL, ' ');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -94,6 +97,10 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, '  ');
 
 //////2req 
 $ch = curl_init();
+///curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
+//curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password"); 
+//////////======= Socks Proxy
+curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
 curl_setopt($ch, CURLOPT_URL, ' ');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -272,6 +279,6 @@ else {
   //////=========Comment Echo $result If U Want To Hide Site Side Response
   echo $result;
 
-///////////////////////////////////////////////===========================Edited By Reboot================================================\\\\\\\\\\\\\\\
+///////////////////////////////////////////////===========================Edited By Reboot13================================================\\\\\\\\\\\\\\\
 
 ?>
