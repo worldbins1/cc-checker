@@ -6,6 +6,7 @@ set_time_limit(0);
 error_reporting(0);
 date_default_timezone_set('America/Buenos_Aires');
 
+
 function multiexplode($delimiters, $string)
 {
   $one = str_replace($delimiters, $delimiters[0], $string);
@@ -24,9 +25,10 @@ function GetStr($string, $start, $end)
   $str = explode($end, $str[1]);
   return $str[0];
 }
+
 function rebootproxys()
 {
-  $poxySocks = $_GET['proxy'];
+  $poxySocks = file("proxy.txt");
   $myproxy = rand(0, sizeof($poxySocks) - 1);
   $poxySocks = $poxySocks[$myproxy];
   return $poxySocks;
@@ -64,18 +66,15 @@ $super_proxy = 'zproxy.lum-superproxy.io';
 ////////////////////////////===[For Authorizing Cards]
 
 $ch = curl_init();
-/////////========Luminati
-// curl_setopt($ch, CURLOPT_PROXY, "http://$super_proxy:$port");
-// curl_setopt($ch, CURLOPT_PROXYUSERPWD, "$username-session-$session:$password");(UNCOMMENT IF YOU ARE USING ZONES)
 ////////=========Socks Proxy
 curl_setopt($ch, CURLOPT_PROXY, $poxySocks4);
-curl_setopt($ch, CURLOPT_URL, '     ');
+curl_setopt($ch, CURLOPT_URL, ' ');
 curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-'accept: ',
-'accept-encoding: ', 
-'content-type: ',
+'accept:  ',
+'accept-encoding:   ', 
+'content-type:  ',
 'origin:  ',
 'referer:  ',
 'sec-fetch-dest: empty',
@@ -87,15 +86,15 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_POSTFIELDS, '     ');
+curl_setopt($ch, CURLOPT_POSTFIELDS, '  ');
 
- $result1 = curl_exec($ch);
- //$token1 = trim(strip_tags(getStr($result1,'"id": "','"')));
+ $result = curl_exec($ch);
+ $token = trim(strip_tags(getStr($result1,'"id": "','"')));
 
 
 //////2req 
-/*$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, '2nd Req url');
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, ' ');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
@@ -106,71 +105,20 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
 curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-  'authority: ...........',
-  'origin: ................',
-  'Referer:.....................',
-  'content-type: application/x-www-form-urlencoded; charset=UTF-8',
+///'Host: ',
+  'Origin: ',
+  'Accept-Encoding: ',
+  'Referer: ',
+  'content-type: ',
+  'Cookie: ',
   'accept: ',
   'sec-fetch-dest: empty',
   'sec-fetch-mode: cors',
   'sec-fetch-site: same-origin',
-  'User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36'
    ));
-curl_setopt($ch, CURLOPT_POSTFIELDS,'    
-
-
-
-
-
-  (token1 here)
-
-
-  ');
+curl_setopt($ch, CURLOPT_POSTFIELDS,' ');
   $result2 = curl_exec($ch);
  $message = trim(strip_tags(getstr($result2,'"message":"','"')));
-$token2 = trim(strip_tags(getstr($result2,'"id":"','"')));*/
-
-
-////3req
-
-/*$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, '3req url');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_COOKIEFILE, getcwd().'/cookie.txt');
-curl_setopt($ch, CURLOPT_COOKIEJAR, getcwd().'/cookie.txt');
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    'authority: .............',
-  'origin: .................',
-  'Referer: ....................',
-  'content-type: ',
-  'accept: ',
- 'sec-fetch-dest: empty',
- 'sec-fetch-mode: cors',
- 'sec-fetch-site: same-origin',
-   ));
-
-
-curl_setopt($ch, CURLOPT_POSTFIELDS, '   
-
-
-
-(token1 and token2 here)
-
-
-
-
-  ');
-
-
-
-  $result3 = curl_exec($ch);
- $message = trim(strip_tags(getstr($result3,'"message":"','"')));*/
 
 ///////////////////////// Bin Lookup Api //////////////////////////
 
