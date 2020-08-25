@@ -18,7 +18,11 @@ Create a file proxy.txt and add Proxies if you are not using zones
 
 Pull request commit changes
 
-NOTE-git web page hosting is not working properly for api request so Download master zip and use checker as local host(eg xampp) or host on any site(eg 000webhost)
+NOTE- Github hosting is just for Static website not dyanamic
+
+You can only host html/css/js file on github not php
+
+For hosting checker download master zip ,update api and host it on xampp(loaclhost) or 000webhost,or any other webhost
 
 
 This api is just a Base
