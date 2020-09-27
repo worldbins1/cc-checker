@@ -1,4 +1,4 @@
-# Project Closed cc-checker
+# Project Closed
 
 A Cc Checker by [Reboot13](https://t.me/reboot13)
 This checker authenticate/charge depends on what type of site you use
